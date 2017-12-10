@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="903b9ccd-ac28-4f8f-8f10-638bd50ff398">
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     voluntario.`id_voluntario` AS voluntario_id_voluntario,
+     voluntario.`email` AS voluntario_email,
+     voluntario.`senha` AS voluntario_senha,
+     voluntario.`nome` AS voluntario_nome,
+     voluntario.`telefone` AS voluntario_telefone,
+     voluntario.`endereco` AS voluntario_endereco
+FROM
+     `voluntario` voluntario]]>
+	</queryString>
+	<field name="voluntario_id_voluntario" class="java.lang.Integer"/>
+	<field name="voluntario_email" class="java.lang.String"/>
+	<field name="voluntario_senha" class="java.lang.String"/>
+	<field name="voluntario_nome" class="java.lang.String"/>
+	<field name="voluntario_telefone" class="java.lang.String"/>
+	<field name="voluntario_endereco" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="5013f049-5c7b-43c0-b669-b2ded7fbde55"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="799f9ac2-678f-4ce5-82a4-6822f56a47a8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Green Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="fbad2cec-b0c7-4359-b335-919b442f28cd"/>
+				<text><![CDATA[Leaf Green SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="11063498-f033-4a7d-884e-4e351cf74836"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="69251b7d-e2bf-4ead-8c3c-993a46d29705"/>
+				<text><![CDATA[voluntario_id_voluntario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="55e9f395-0765-4934-8535-80384adfcde3"/>
+				<text><![CDATA[voluntario_email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="184" y="19" width="92" height="15" uuid="1573ec2a-21d8-462c-afb5-35d051094fe2"/>
+				<text><![CDATA[voluntario_senha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="92" height="15" uuid="b429c3f3-806f-4e30-8e72-19d11b6ebafe"/>
+				<text><![CDATA[voluntario_nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="368" y="19" width="92" height="15" uuid="538e74fb-a125-4f65-bc4a-dc6286cdccf7"/>
+				<text><![CDATA[voluntario_telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="460" y="19" width="92" height="15" uuid="b74fb80e-80b8-43ff-86de-8f7d4b1edfaf"/>
+				<text><![CDATA[voluntario_endereco]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="7d1751e9-6bca-4773-8c04-35416b1ef966"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="de3850c8-e879-403a-8a9a-9c0bcff27061"/>
+				<textFieldExpression><![CDATA[$F{voluntario_id_voluntario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="2bcf7db3-eef0-4a83-bb9b-5ce2d8c09f6d"/>
+				<textFieldExpression><![CDATA[$F{voluntario_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="465adf92-42bb-4ba0-a699-8a1fc5b58fcd"/>
+				<textFieldExpression><![CDATA[$F{voluntario_senha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="92" height="15" uuid="f96b652a-e629-453f-b62d-70eef102d999"/>
+				<textFieldExpression><![CDATA[$F{voluntario_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="e435322d-47bb-434f-bf80-1be551817328"/>
+				<textFieldExpression><![CDATA[$F{voluntario_telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="79cee0c2-5751-4847-8cab-f50e23a9cea7"/>
+				<textFieldExpression><![CDATA[$F{voluntario_endereco}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="168a1870-11fc-4303-aef9-798eff0bde0c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="d60e6128-4792-4d2c-a64c-49a3db110721"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="8e2c8747-289d-4695-af6b-08d09a5385b2"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="1b7c066b-32d8-4aee-bdc9-550ee4f739c3"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
